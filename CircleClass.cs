@@ -17,7 +17,7 @@ namespace LabNine
             radius = radiusInput;
             circumference = GetCircumference();
 
-         }
+         
 
         public string FormattedNumber1
         {

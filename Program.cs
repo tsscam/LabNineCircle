@@ -16,31 +16,32 @@ namespace LabNine
 
 
             // Declare Variables
-            string str = new string('*', 20);
-            CircleClass Circle1 = new CircleClass();
-            Circle1.Radius1 = 0;
-            Circle1.Circumference1 = 0;
-            Circle1.Area1 = 0;
-            Circle1.FormatedCircumference1 = 0;
-            Circle1.FormattedNumber1 = 0;
-            Circle1.FormattedArea1 = 0;
+            bool loop = true;
+            List<CircleClass> CircleList = new List<CircleClass>();
 
-            //Math functions
-            double radius = double.Parse(Console.ReadLine());
-            double pi = Math.PI;
-            //double area = 2 * pi * Radius1;
+            while (loop)
+            //Request information
+            {
+                Console.Write("Enter the radius, here: ");
+                CircleList.Add(new CircleClass(GetValidDouble()));
+                Console.WriteLine($"Circumference; {CircleList.Last().GetFormatedCircumference1()}");
+                Console.WriteLine($"Area: {CircleList.Last().GetFormattedArea()}");
 
-            //Request from User
+            }
 
-            Console.Write("Enter the radius");
-            Circle1.Radius1 = int.Parse(Console.ReadLine());
+            public static double GetValidDouble()
+            {
+                double input;
+                while (!double.TryParse(Console.ReadLine()), out input))
+                {
+                    Console.WriteLine("This is not a valid number. Try again, now: ");
 
-            // Contin
-            //while (true)
-            //{
-            //    Console.WriteLine("\nEnter the RADIUS: ");
+                }
+                return input;
+           }
 
-            //}
+                        
+          
         }
     }
 }
